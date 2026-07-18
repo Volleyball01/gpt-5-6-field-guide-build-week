@@ -216,6 +216,11 @@
     .task-index { color: var(--umber); font: 500 .9rem var(--serif); }
     .task-option strong { display: block; font-size: .76rem; }
     .task-option small { display: block; margin-top: .12rem; color: var(--muted); font-size: .64rem; }
+    .task-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .5rem; margin-top: .16rem; }
+    .task-meta small { margin-top: 0; }
+    .task-scope { padding: .18rem .35rem; border: 1px solid var(--rule); color: var(--faint); font: 700 .48rem/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+    .task-scope.general { border-color: var(--umber); color: var(--umber); }
+    .task-scope.proxy { border-style: dashed; }
     .task-arrow { color: var(--faint); }
     .segmented { display: grid; grid-template-columns: repeat(3, 1fr); gap: .45rem; margin-top: 1rem; }
     .metric-segmented { display: grid; grid-template-columns: repeat(2, 1fr); gap: .45rem; margin-top: 1rem; }
@@ -266,9 +271,8 @@
     .preference-dock-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: .8rem; }
     .preference-dock-head strong { font: 500 1rem var(--serif); }
     .preference-dock-head span { color: var(--faint); font-size: .56rem; }
-    .preference-grid { display: grid; grid-template-columns: minmax(10rem, 1.4fr) minmax(11rem, 1.2fr) minmax(10rem, 1fr); gap: .7rem; align-items: end; }
+    .preference-grid { display: grid; grid-template-columns: minmax(11rem, 1.25fr) minmax(10rem, 1fr); gap: .7rem; align-items: end; }
     .preference-field label, .preference-field > span { display: block; margin-bottom: .35rem; color: var(--faint); font-size: .55rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
-    .preference-field select { width: 100%; min-height: 2.45rem; padding: .45rem .6rem; border: 1px solid var(--rule); background: var(--sheet); }
     .compact-tendency { display: grid; grid-template-columns: repeat(3, 1fr); gap: .3rem; }
     .compact-tendency button { min-height: 2.45rem; padding: .35rem; border: 1px solid var(--rule); background: var(--sheet); font-size: .57rem; }
     .compact-tendency button[aria-pressed="true"] { background: var(--ink); color: var(--sheet); border-color: var(--ink); }
@@ -277,6 +281,11 @@
     .compact-range-row output { color: var(--muted); font: 600 .57rem var(--mono); }
     .dock-metrics { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .75rem; padding-top: .75rem; border-top: 1px solid var(--rule-soft); }
     .dock-metrics .metric-button { border-radius: .35rem; }
+    .atlas-task-context { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .8rem; align-items: center; margin-bottom: .75rem; padding: .75rem .9rem; border-left: 3px solid var(--umber); background: color-mix(in srgb, var(--umber-soft), transparent 45%); }
+    .atlas-task-context span { color: var(--umber); font: 750 .52rem var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    .atlas-task-context p { margin: 0; color: var(--muted); font-size: .63rem; }
+    .atlas-task-context.is-independent { border-left-color: var(--faint); background: color-mix(in srgb, var(--paper-deep), transparent 25%); }
+    .atlas-task-context.is-independent span { color: var(--faint); }
 
     .synthesis-panel { padding: clamp(1.3rem, 4vw, 3rem); border-bottom: 1px solid var(--rule); background: color-mix(in srgb, var(--umber-soft), transparent 52%); }
     .synthesis-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, .65fr); gap: 2rem; align-items: end; }
@@ -865,13 +874,13 @@
     const TASK_GROUPS = [
       {
         id: "everyday", label: "Everyday work", note: "7 task shapes", tasks: [
-          { id: "questions", label: "Everyday questions and quick help", note: "Broad, low-friction assistance", benchmark: "aa-intelligence-index-v4-1" },
-          { id: "writing", label: "Writing, editing and translation", note: "Drafting and language refinement", benchmark: "aa-intelligence-index-v4-1" },
-          { id: "learning", label: "Learning, explanation and review", note: "Teaching, synthesis, and checking", benchmark: "aa-intelligence-index-v4-1" },
+          { id: "questions", label: "Everyday questions and quick help", note: "Broad, low-friction assistance", benchmark: "aa-intelligence-index-v4-1", scope: "general" },
+          { id: "writing", label: "Writing, editing and translation", note: "Drafting and language refinement", benchmark: "aa-intelligence-index-v4-1", scope: "general" },
+          { id: "learning", label: "Learning, explanation and review", note: "Teaching, synthesis, and checking", benchmark: "aa-intelligence-index-v4-1", scope: "general" },
           { id: "deep-research", label: "Deep research and source analysis", note: "Multi-hop evidence gathering", benchmark: "browsecomp" },
           { id: "coding", label: "Coding, debugging and repository review", note: "Repository and terminal work", benchmark: "terminal-bench-2-1" },
-          { id: "data", label: "Data analysis and visualization", note: "Analytical professional workflows", benchmark: "agents-last-exam" },
-          { id: "planning", label: "Complex planning and important decisions", note: "Long-horizon professional judgment", benchmark: "agents-last-exam" }
+          { id: "data", label: "Data analysis and visualization", note: "Analytical professional workflows", benchmark: "agents-last-exam", scope: "proxy" },
+          { id: "planning", label: "Complex planning and important decisions", note: "Long-horizon professional judgment", benchmark: "agents-last-exam", scope: "proxy" }
         ]
       },
       {
@@ -1039,23 +1048,18 @@
 
     function renderDecisionControls() {
       let taskIndex = 0;
-      byId("task-list").innerHTML = TASK_GROUPS.map((group) => `<section class="task-group" aria-labelledby="task-group-${group.id}"><h4 class="task-group-title" id="task-group-${group.id}"><span>${group.label}</span><span>${group.note}</span></h4>${group.tasks.map((task) => { taskIndex += 1; return `<button class="task-option" type="button" data-pref-task-button="${task.id}" aria-pressed="${task.id === state.task}"><span class="task-index">${String(taskIndex).padStart(2, "0")}</span><span><strong>${task.label}</strong><small>${task.note}</small></span><span class="task-arrow" aria-hidden="true">→</span></button>`; }).join("")}</section>`).join("");
+      byId("task-list").innerHTML = TASK_GROUPS.map((group) => `<section class="task-group" aria-labelledby="task-group-${group.id}"><h4 class="task-group-title" id="task-group-${group.id}"><span>${group.label}</span><span>${group.note}</span></h4>${group.tasks.map((task) => { taskIndex += 1; const scope = task.scope === "general" ? `<span class="task-scope general">General overview only</span>` : task.scope === "proxy" ? `<span class="task-scope proxy">Broad proxy evidence</span>` : ""; return `<button class="task-option" type="button" data-pref-task-button="${task.id}" aria-pressed="${task.id === state.task}"><span class="task-index">${String(taskIndex).padStart(2, "0")}</span><span><strong>${task.label}</strong><span class="task-meta"><small>${task.note}</small>${scope}</span></span><span class="task-arrow" aria-hidden="true">→</span></button>`; }).join("")}</section>`).join("");
       byId("tendency-list").innerHTML = Object.entries(TENDENCIES).map(([id, item]) => `<button class="tendency-button" type="button" data-pref-tendency="${id}" aria-pressed="${id === state.tendency}"><strong>${item.label}</strong><small>${item.note}</small></button>`).join("");
       byId("quick-metric-list").innerHTML = ["cost", "latency", "tokens", "composite"].map((metric) => `<button class="metric-button" type="button" data-pref-metric="${metric}" aria-pressed="${state.metric === metric}">${metricShortLabel(metric)}</button>`).join("");
       byId("wait-range").value = state.wait;
       byId("wait-value").textContent = `${100 - state.wait} / ${state.wait}`;
     }
 
-    function taskOptions() {
-      return TASK_GROUPS.map((group) => `<optgroup label="${group.label}">${group.tasks.map((task) => `<option value="${task.id}">${task.label}</option>`).join("")}</optgroup>`).join("");
-    }
-
     function preferenceDockMarkup(scope) {
-      return `<div class="preference-dock" data-preference-dock="${scope}"><div class="preference-dock-head"><strong>Linked global preferences</strong><span>Changes apply everywhere</span></div><div class="preference-grid"><div class="preference-field"><label for="${scope}-task">Selected task</label><select id="${scope}-task" data-pref-task>${taskOptions()}</select></div><div class="preference-field"><span>Recommendation tendency</span><div class="compact-tendency" role="group" aria-label="Recommendation tendency">${Object.entries(TENDENCIES).map(([id, item]) => `<button type="button" data-pref-tendency="${id}" aria-pressed="${id === state.tendency}">${item.label.replace(" Resources", "")}</button>`).join("")}</div></div><div class="preference-field"><label for="${scope}-wait">Money versus waiting</label><div class="compact-range-row"><input id="${scope}-wait" type="range" min="0" max="100" step="5" data-pref-wait aria-label="Balance saving money against saving waiting time"><output data-pref-wait-output></output></div></div></div><div class="dock-metrics" role="group" aria-label="Active resource metric"><span class="micro-label">Active metric</span>${["cost", "latency", "tokens", "composite"].map((metric) => `<button class="metric-button" type="button" data-pref-metric="${metric}" aria-pressed="${state.metric === metric}">${metricShortLabel(metric)}</button>`).join("")}</div></div>`;
+      return `<div class="preference-dock" data-preference-dock="${scope}"><div class="preference-dock-head"><strong>Shared recommendation settings</strong><span>Task is chosen in Quick Decision</span></div><div class="preference-grid"><div class="preference-field"><span>Recommendation tendency</span><div class="compact-tendency" role="group" aria-label="Recommendation tendency">${Object.entries(TENDENCIES).map(([id, item]) => `<button type="button" data-pref-tendency="${id}" aria-pressed="${id === state.tendency}">${item.label.replace(" Resources", "")}</button>`).join("")}</div></div><div class="preference-field"><label for="${scope}-wait">Money versus waiting</label><div class="compact-range-row"><input id="${scope}-wait" type="range" min="0" max="100" step="5" data-pref-wait aria-label="Balance saving money against saving waiting time"><output data-pref-wait-output></output></div></div></div><div class="dock-metrics" role="group" aria-label="Active resource metric"><span class="micro-label">Active metric</span>${["cost", "latency", "tokens", "composite"].map((metric) => `<button class="metric-button" type="button" data-pref-metric="${metric}" aria-pressed="${state.metric === metric}">${metricShortLabel(metric)}</button>`).join("")}</div></div>`;
     }
 
     function syncPreferenceControls() {
-      document.querySelectorAll("[data-pref-task]").forEach((control) => { control.value = state.task; });
       document.querySelectorAll("[data-pref-task-button]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.prefTaskButton === state.task)));
       document.querySelectorAll("[data-pref-tendency]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.prefTendency === state.tendency)));
       document.querySelectorAll("[data-pref-metric]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.prefMetric === state.metric)));
@@ -1171,15 +1175,18 @@
       host.innerHTML = `<div class="synthesis-head"><div><span class="interpretation-flag">Project interpretation · not an official score</span><h3>${cap.short} synthesis</h3></div><p>${synthesis.useFit ? `Preference-aware fit uses ${synthesis.resourceBenchmarkCount} of ${synthesis.total} family benchmarks with complete resource fields. Score position uses all available family evidence.` : `All ${synthesis.total} family benchmarks are score-only in this dataset. The synthesis shows normalized score position and cannot apply cost, latency, token, or composite preferences.`}</p></div><div class="synthesis-grid">${synthesis.results.map((item) => { const primary = item.preferenceFit ?? item.scorePosition; return `<article class="synthesis-card ${item.modelId === synthesis.leader.modelId ? "is-leader" : ""}"><h4>${modelName(item.modelId)}<span>${Math.round(primary * 100)} / 100</span></h4><div class="synthesis-track"><div class="synthesis-fill" style="--width:${primary * 100}%;--model:${MODEL_COLORS[item.modelId]}"></div></div><dl><div><dt>Normalized score position</dt><dd>${Math.round(item.scorePosition * 100)} / 100</dd></div><div><dt>Benchmark coverage</dt><dd>${item.scoreCoverage} / ${synthesis.total}</dd></div><div><dt>Resource coverage</dt><dd>${item.resourceCoverage} / ${synthesis.total}</dd></div><div><dt>Confidence</dt><dd>${item.confidence}</dd></div></dl></article>`; }).join("")}</div><p class="synthesis-note">Method: scores are min–max normalized inside each benchmark, then normalized positions are averaged by model. Preference fit averages the best current utility per model only where full resource fields exist. Raw scores from unlike benchmarks are never averaged. “Confidence” describes evidence breadth and coverage; it is not a statistical confidence interval.</p>`;
     }
 
+    function atlasTaskContextMarkup() {
+      const task = TASKS.find((item) => item.id === state.task);
+      if (task.scope === "general") return `<div class="atlas-task-context is-independent" id="atlas-task-context"><span>General overview only</span><p>${task.label} has no single specialist benchmark. This detailed Atlas remains available for independent exploration.</p></div>`;
+      if (task.benchmark === state.benchmark) return `<div class="atlas-task-context" id="atlas-task-context"><span>Suggested evidence</span><p>${BENCHMARK_COPY[state.benchmark].name} is the project-mapped specialist evidence for ${task.label.toLowerCase()}.</p></div>`;
+      return `<div class="atlas-task-context is-independent" id="atlas-task-context"><span>Independent exploration</span><p>The suggested evidence for ${task.label.toLowerCase()} is ${BENCHMARK_COPY[task.benchmark].name}; you are currently reading ${BENCHMARK_COPY[state.benchmark].name}.</p></div>`;
+    }
+
     function atlasConditionText() {
       const complete = pointsFor(state.benchmark).filter(completePoint);
-      const task = TASKS.find((item) => item.id === state.task);
-      const taskContext = task.benchmark === state.benchmark
-        ? `The selected task maps directly to this benchmark as project interpretation.`
-        : `The selected task maps to ${BENCHMARK_COPY[task.benchmark].name}; this detail remains an independent reading of ${BENCHMARK_COPY[state.benchmark].name}.`;
       return complete.length
-        ? `Project interpretation: the balance point uses ${TENDENCIES[state.tendency].label}, ${metricLabel(state.metric).toLowerCase()}, and a ${100 - state.wait}/${state.wait} money-versus-waiting preference. ${taskContext} All normalizations stay inside this benchmark.`
-        : `${taskContext} Resource metrics are not published for these points. The chart shows score only, and no resource recommendation is generated.`;
+        ? `Project interpretation: the balance point uses ${TENDENCIES[state.tendency].label}, ${metricLabel(state.metric).toLowerCase()}, and a ${100 - state.wait}/${state.wait} money-versus-waiting preference. All normalizations stay inside this benchmark.`
+        : `Resource metrics are not published for these points. The chart shows score only, and no resource recommendation is generated.`;
     }
 
     function renderAtlasReader() {
@@ -1205,6 +1212,7 @@
           </div>
         </header>
         <div class="atlas-controls">
+          ${atlasTaskContextMarkup()}
           ${preferenceDockMarkup("atlas")}
           <p class="atlas-condition" id="atlas-condition">${atlasConditionText()}</p>
         </div>
@@ -1242,8 +1250,7 @@
       const recommended = recommendationFor(benchmarkId);
       const selected = points.find((point) => pointKey(point) === state.aaSelectedPoint) || recommended;
       state.aaSelectedPoint = pointKey(selected);
-      const task = TASKS.find((item) => item.id === state.task);
-      byId("aa-overview-body").innerHTML = `<div class="chart-heading"><div><h4>Index score versus ${metricLabel(state.metric).toLowerCase()}</h4><p>Project interpretation: ${TENDENCIES[state.tendency].label} selects the starred point using the shared ${100 - state.wait}/${state.wait} money-versus-waiting preference. Selected task: ${task.label}. ${task.benchmark === benchmarkId ? "This general index supplies its overview evidence." : `Its primary evidence is ${BENCHMARK_COPY[task.benchmark].name}; this chart remains a broad reference.`} Click or focus a point to inspect it.</p></div><div class="chart-key"><span><i style="--key:var(--luna)"></i>Luna</span><span><i style="--key:var(--terra)"></i>Terra</span><span><i style="--key:var(--sol)"></i>Sol</span></div></div><div class="chart-shell" id="aa-chart-shell"></div><section class="point-panel" id="aa-point-panel"></section><div class="provenance-block"><div><span class="micro-label">Score interpretation</span><h4>Versioned composite index</h4><p>${scoreInterpretation(definition(benchmarkId))}</p></div><div><span class="micro-label">Evidence used</span><h4>Artificial Analysis Intelligence Index v4.1</h4><p>Benchmark owner: Artificial Analysis. Snapshot status: pre-existing schema 0.2.0 data with recorded provenance <span class="mono">openai-official</span>. The source labels point to OpenAI release assets; the guide does not recast this snapshot as a live or official Artificial Analysis dataset release.</p></div></div>`;
+      byId("aa-overview-body").innerHTML = `<div class="chart-heading"><div><h4>Index score versus ${metricLabel(state.metric).toLowerCase()}</h4><p>Project interpretation: ${TENDENCIES[state.tendency].label} selects the starred point using the shared ${100 - state.wait}/${state.wait} money-versus-waiting preference. The task choice above does not alter this general benchmark; only the shared recommendation settings control its starred point. Click or focus a point to inspect it.</p></div><div class="chart-key"><span><i style="--key:var(--luna)"></i>Luna</span><span><i style="--key:var(--terra)"></i>Terra</span><span><i style="--key:var(--sol)"></i>Sol</span></div></div><div class="chart-shell" id="aa-chart-shell"></div><section class="point-panel" id="aa-point-panel"></section><div class="provenance-block"><div><span class="micro-label">Score interpretation</span><h4>Versioned composite index</h4><p>${scoreInterpretation(definition(benchmarkId))}</p></div><div><span class="micro-label">Evidence used</span><h4>Artificial Analysis Intelligence Index v4.1</h4><p>Benchmark owner: Artificial Analysis. Snapshot status: pre-existing schema 0.2.0 data with recorded provenance <span class="mono">openai-official</span>. The source labels point to OpenAI release assets; the guide does not recast this snapshot as a live or official Artificial Analysis dataset release.</p></div></div>`;
       renderAAChart();
       renderAAPointPanel(selected);
     }
@@ -1424,7 +1431,7 @@
           byId("atlas-search").value = "";
           renderCapabilityNav();
           renderAtlasReader();
-        }
+        } else renderAtlasReader();
       }
       refreshPreferenceResults();
     }
@@ -1437,13 +1444,6 @@
         if (tendency) { setPreference("tendency", tendency.dataset.prefTendency); return; }
         const metric = event.target.closest("[data-pref-metric]");
         if (metric) { setPreference("metric", metric.dataset.prefMetric); }
-      });
-      document.addEventListener("change", (event) => {
-        const taskSelect = event.target.closest("[data-pref-task]");
-        if (!taskSelect) return;
-        const scope = taskSelect.closest("[data-preference-dock]")?.dataset.preferenceDock;
-        setPreference("task", taskSelect.value);
-        requestAnimationFrame(() => document.querySelector(`[data-preference-dock="${scope}"] [data-pref-task]`)?.focus());
       });
       document.addEventListener("input", (event) => {
         const range = event.target.closest("[data-pref-wait]");
