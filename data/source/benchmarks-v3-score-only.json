@@ -1,0 +1,2177 @@
+{
+  "schemaVersion": "0.3.0",
+  "generatedAt": null,
+  "benchmarks": [
+    {
+      "id": "management-consulting-internal",
+      "name": "管理咨询任务 (内部)",
+      "category": "professional-capability",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "big-finance-bench",
+      "name": "Big Finance Bench",
+      "category": "professional-capability",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "swe-bench-pro",
+      "name": "SWE-Bench Pro",
+      "category": "coding",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "healthbench-professional",
+      "name": "Healthbench Professional",
+      "category": "safety",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "benchcad",
+      "name": "BenchCAD",
+      "category": "computer-use",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "benchcad-python-tools",
+      "name": "BenchCAD (python 工具)",
+      "category": "computer-use",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "ctf-challenge",
+      "name": "夺旗挑战",
+      "category": "cybersecurity",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "sec-bench-pro",
+      "name": "SEC-Bench Pro",
+      "category": "cybersecurity",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "exploitbench",
+      "name": "ExploitBench",
+      "category": "cybersecurity",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "exploitgym",
+      "name": "ExploitGym",
+      "category": "cybersecurity",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "internal-research-debugging-eval",
+      "name": "Internal Research Debugging Evaluation",
+      "category": "self-improvement",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "kernelgen-1p",
+      "name": "KernelGen 1P",
+      "category": "self-improvement",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "nanogpt",
+      "name": "NanoGPT",
+      "category": "self-improvement",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "posttrainbench-lite",
+      "name": "PostTrainBench Lite",
+      "category": "self-improvement",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "rsi-index",
+      "name": "RSI Index",
+      "category": "self-improvement",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "gpqa-diamond",
+      "name": "GPQA Diamond",
+      "category": "academic",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "frontiermath-tier-1-3-v2",
+      "name": "FrontierMath Tier 1-3 (v2)",
+      "category": "academic",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "frontiermath-tier-4-v2",
+      "name": "FrontierMath Tier 4 (v2)",
+      "category": "academic",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    },
+    {
+      "id": "arc-agi-3",
+      "name": "ARC-AGI-3",
+      "category": "abstract-reasoning",
+      "scoreMetric": "percent",
+      "higherIsBetter": true
+    }
+  ],
+  "points": [
+    {
+      "benchmarkId": "management-consulting-internal",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 43.2,
+        "unit": "percent",
+        "metric": "management-consulting-internal"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table.",
+        "Internal evaluation: scores reflect OpenAI internal evaluation, not a public third-party benchmark."
+      ]
+    },
+    {
+      "benchmarkId": "management-consulting-internal",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 37.2,
+        "unit": "percent",
+        "metric": "management-consulting-internal"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table.",
+        "Internal evaluation: scores reflect OpenAI internal evaluation, not a public third-party benchmark."
+      ]
+    },
+    {
+      "benchmarkId": "management-consulting-internal",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 35.4,
+        "unit": "percent",
+        "metric": "management-consulting-internal"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table.",
+        "Internal evaluation: scores reflect OpenAI internal evaluation, not a public third-party benchmark."
+      ]
+    },
+    {
+      "benchmarkId": "big-finance-bench",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 53,
+        "unit": "percent",
+        "metric": "big-finance-bench"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "big-finance-bench",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 51,
+        "unit": "percent",
+        "metric": "big-finance-bench"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "big-finance-bench",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 36,
+        "unit": "percent",
+        "metric": "big-finance-bench"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 64.6,
+        "unit": "percent",
+        "metric": "swe-bench-pro"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 63.4,
+        "unit": "percent",
+        "metric": "swe-bench-pro"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "swe-bench-pro",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 62.7,
+        "unit": "percent",
+        "metric": "swe-bench-pro"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "healthbench-professional",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 60.5,
+        "unit": "percent",
+        "metric": "healthbench-professional"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "healthbench-professional",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 57.7,
+        "unit": "percent",
+        "metric": "healthbench-professional"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "healthbench-professional",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 55.7,
+        "unit": "percent",
+        "metric": "healthbench-professional"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "benchcad",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 70.6,
+        "unit": "percent",
+        "metric": "benchcad"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "benchcad",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 62.3,
+        "unit": "percent",
+        "metric": "benchcad"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "benchcad",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 63.1,
+        "unit": "percent",
+        "metric": "benchcad"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "benchcad-python-tools",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 83.4,
+        "unit": "percent",
+        "metric": "benchcad-python-tools"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "benchcad-python-tools",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 78.2,
+        "unit": "percent",
+        "metric": "benchcad-python-tools"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "benchcad-python-tools",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 73.9,
+        "unit": "percent",
+        "metric": "benchcad-python-tools"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "ctf-challenge",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 96.7,
+        "unit": "percent",
+        "metric": "ctf-challenge"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "ctf-challenge",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 91.8,
+        "unit": "percent",
+        "metric": "ctf-challenge"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "ctf-challenge",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 85.2,
+        "unit": "percent",
+        "metric": "ctf-challenge"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "sec-bench-pro",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 71.2,
+        "unit": "percent",
+        "metric": "sec-bench-pro"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "sec-bench-pro",
+      "modelId": "sol-ultra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 74.3,
+        "unit": "percent",
+        "metric": "sec-bench-pro"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "sec-bench-pro",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 57.7,
+        "unit": "percent",
+        "metric": "sec-bench-pro"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "sec-bench-pro",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 48.9,
+        "unit": "percent",
+        "metric": "sec-bench-pro"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "exploitbench",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 73.5,
+        "unit": "percent",
+        "metric": "exploitbench"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "exploitbench",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 52.9,
+        "unit": "percent",
+        "metric": "exploitbench"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "exploitbench",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 33.2,
+        "unit": "percent",
+        "metric": "exploitbench"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "exploitgym",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 33.7,
+        "unit": "percent",
+        "metric": "exploitgym"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "exploitgym",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 23.2,
+        "unit": "percent",
+        "metric": "exploitgym"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "exploitgym",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 12.4,
+        "unit": "percent",
+        "metric": "exploitgym"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "internal-research-debugging-eval",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 68.3,
+        "unit": "percent",
+        "metric": "internal-research-debugging-eval"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table.",
+        "Internal evaluation: scores reflect OpenAI internal evaluation, not a public third-party benchmark."
+      ]
+    },
+    {
+      "benchmarkId": "internal-research-debugging-eval",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 67.8,
+        "unit": "percent",
+        "metric": "internal-research-debugging-eval"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table.",
+        "Internal evaluation: scores reflect OpenAI internal evaluation, not a public third-party benchmark."
+      ]
+    },
+    {
+      "benchmarkId": "internal-research-debugging-eval",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 50.8,
+        "unit": "percent",
+        "metric": "internal-research-debugging-eval"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table.",
+        "Internal evaluation: scores reflect OpenAI internal evaluation, not a public third-party benchmark."
+      ]
+    },
+    {
+      "benchmarkId": "kernelgen-1p",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 61.1,
+        "unit": "percent",
+        "metric": "kernelgen-1p"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "kernelgen-1p",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 49.2,
+        "unit": "percent",
+        "metric": "kernelgen-1p"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "kernelgen-1p",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 22.4,
+        "unit": "percent",
+        "metric": "kernelgen-1p"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "nanogpt",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 9.69,
+        "unit": "percent",
+        "metric": "nanogpt"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "nanogpt",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 14.5,
+        "unit": "percent",
+        "metric": "nanogpt"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "nanogpt",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 1.66,
+        "unit": "percent",
+        "metric": "nanogpt"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "posttrainbench-lite",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 50.3,
+        "unit": "percent",
+        "metric": "posttrainbench-lite"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "posttrainbench-lite",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 51.5,
+        "unit": "percent",
+        "metric": "posttrainbench-lite"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "posttrainbench-lite",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 29.6,
+        "unit": "percent",
+        "metric": "posttrainbench-lite"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "rsi-index",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 57.9,
+        "unit": "percent",
+        "metric": "rsi-index"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "rsi-index",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 56.3,
+        "unit": "percent",
+        "metric": "rsi-index"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "rsi-index",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 41.9,
+        "unit": "percent",
+        "metric": "rsi-index"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 94.6,
+        "unit": "percent",
+        "metric": "gpqa-diamond"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 92.9,
+        "unit": "percent",
+        "metric": "gpqa-diamond"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "gpqa-diamond",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 92.3,
+        "unit": "percent",
+        "metric": "gpqa-diamond"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "frontiermath-tier-1-3-v2",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 89,
+        "unit": "percent",
+        "metric": "frontiermath-tier-1-3-v2"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "frontiermath-tier-1-3-v2",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 84.9,
+        "unit": "percent",
+        "metric": "frontiermath-tier-1-3-v2"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "frontiermath-tier-1-3-v2",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 78.6,
+        "unit": "percent",
+        "metric": "frontiermath-tier-1-3-v2"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "frontiermath-tier-4-v2",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 83,
+        "unit": "percent",
+        "metric": "frontiermath-tier-4-v2"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "frontiermath-tier-4-v2",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 68.3,
+        "unit": "percent",
+        "metric": "frontiermath-tier-4-v2"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "frontiermath-tier-4-v2",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 58.5,
+        "unit": "percent",
+        "metric": "frontiermath-tier-4-v2"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "arc-agi-3",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 7.78,
+        "unit": "percent",
+        "metric": "arc-agi-3"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "arc-agi-3",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 0.8,
+        "unit": "percent",
+        "metric": "arc-agi-3"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    },
+    {
+      "benchmarkId": "arc-agi-3",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 0.18,
+        "unit": "percent",
+        "metric": "arc-agi-3"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "table": "sources/openai/raw/tables/Markdown Table.md"
+      },
+      "missing": [
+        {
+          "field": "cost",
+          "reason": "not-published"
+        },
+        {
+          "field": "latency",
+          "reason": "not-published"
+        },
+        {
+          "field": "outputTokens",
+          "reason": "not-published"
+        }
+      ],
+      "notes": [
+        "Score sourced from the official Markdown score table; no cost/latency/output-token chart is published for this capability. reasoningEffort is not reported by the table."
+      ]
+    }
+  ]
+}
