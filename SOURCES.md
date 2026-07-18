@@ -41,4 +41,18 @@ In `benchmarks-v3.json`, 24 points explicitly omit cost, latency, and output-tok
 
 ## Interpretation boundary
 
-Benchmark results are evidence about particular evaluations, not proof that one model or configuration is universally best. Future task mappings or recommendations must be labeled as project-specific interpretation and must remain traceable to the underlying records.
+Benchmark results are evidence about particular evaluations, not proof that one model or configuration is universally best. Task mappings, recommendations, balance points, composite resource cost, capability syntheses, and confidence labels are project-specific interpretation and remain traceable to the underlying records.
+
+## Project-derived synthesis policy
+
+The capability-family synthesis never averages raw scores from unlike benchmarks.
+
+- Scores are min–max normalized only within their own benchmark.
+- Each model contributes its strongest normalized score position within that benchmark.
+- Normalized positions may then be averaged across the benchmarks in one capability family.
+- Preference fit uses only benchmark points with complete cost, latency, and output-token fields.
+- Score-only evidence may contribute to normalized score position but never to cost, latency, token, composite-resource, or value claims.
+- Coverage reports how many family benchmarks contribute evidence for a model.
+- Confidence is a project label based on evidence breadth and coverage, not a statistical confidence interval.
+
+The active recommendation metric is also normalized within the active benchmark. Estimated cost and output tokens use log min–max normalization; latency uses linear min–max normalization. The project-specific composite combines those normalized resource dimensions. No project-derived value overwrites a source score or missing field.
