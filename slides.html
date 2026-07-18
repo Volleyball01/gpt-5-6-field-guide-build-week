@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en" data-theme="paper">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="A six-slide presentation for the GPT-5.6 Field Guide Build Week submission.">
+  <meta name="theme-color" content="#f8f6f0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23152a3b'/%3E%3Cpath d='M15 17h34M15 32h25M15 47h18' stroke='%23f8f6f0' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <title>GPT-5.6 Field Guide — Build Week Demo</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f8f6f0;
+      --paper-deep: #efede6;
+      --sheet: #fffef9;
+      --ink: #172029;
+      --ink-soft: #35424b;
+      --muted: #647078;
+      --faint: #8c9598;
+      --rule: #c8c9c2;
+      --rule-soft: #deded7;
+      --umber: #9d5c39;
+      --umber-soft: #eadbd0;
+      --luna: #ba6b46;
+      --terra: #557b6f;
+      --sol: #285a7a;
+      --ultra: #74649a;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      --shadow: 0 2rem 6rem rgba(32, 37, 40, .18);
+    }
+
+    :root[data-theme="study"] {
+      color-scheme: dark;
+      --paper: #0d2230;
+      --paper-deep: #0a1a25;
+      --sheet: #102b3b;
+      --ink: #edf0e8;
+      --ink-soft: #cbd4d2;
+      --muted: #9eacae;
+      --faint: #71848a;
+      --rule: #3c5662;
+      --rule-soft: #263f4b;
+      --umber: #d79a71;
+      --umber-soft: #3e3440;
+      --luna: #e0926e;
+      --terra: #8ab3a5;
+      --sol: #79aed0;
+      --ultra: #b6a6db;
+      --shadow: 0 2rem 7rem rgba(0, 0, 0, .48);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { width: 100%; min-height: 100%; margin: 0; }
+    html { background: #09141b; }
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100dvh;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(157, 92, 57, .16), transparent 28rem),
+        radial-gradient(circle at 82% 84%, rgba(40, 90, 122, .2), transparent 30rem),
+        #09141b;
+      color: var(--ink);
+      font-family: var(--sans);
+    }
+
+    button, a { font: inherit; }
+    button { color: inherit; }
+    button:focus-visible, a:focus-visible { outline: .16rem solid var(--umber); outline-offset: .18rem; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+    .deck {
+      position: relative;
+      width: min(100vw, calc(100dvh * 16 / 9));
+      height: min(100dvh, calc(100vw * 9 / 16));
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+      container-type: size;
+    }
+
+    .deck::before {
+      position: absolute;
+      inset: 0;
+      z-index: 20;
+      pointer-events: none;
+      content: "";
+      opacity: .32;
+      background:
+        repeating-linear-gradient(0deg, transparent 0 3px, color-mix(in srgb, var(--ink), transparent 97%) 3px 4px),
+        radial-gradient(circle, color-mix(in srgb, var(--ink), transparent 90%) .45px, transparent .7px);
+      background-size: auto, 6px 6px;
+      mix-blend-mode: multiply;
+    }
+
+    .deck-chrome {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 8.5cqh;
+      padding: 0 4.6cqw;
+      border-bottom: 1px solid var(--rule-soft);
+      background: color-mix(in srgb, var(--paper), transparent 7%);
+    }
+
+    .brand, .chrome-meta, .nav-hint, .eyebrow, .micro, .metric, .badge, .step-number, .source-line, .slide-kicker {
+      font-family: var(--mono);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .brand { display: flex; align-items: center; gap: .85cqw; font-size: 1.03cqw; font-weight: 700; }
+    .brand-mark { width: .68cqw; height: .68cqw; border-radius: 50% 50% 50% 12%; background: var(--umber); transform: rotate(45deg); }
+    .chrome-actions { display: flex; align-items: center; gap: .8cqw; }
+    .chrome-meta { color: var(--muted); font-size: .72cqw; }
+    .icon-button {
+      display: grid;
+      place-items: center;
+      width: 2.4cqw;
+      height: 2.4cqw;
+      min-width: 1.75rem;
+      min-height: 1.75rem;
+      padding: 0;
+      border: 1px solid var(--rule);
+      border-radius: 50%;
+      background: transparent;
+      cursor: pointer;
+      transition: transform .18s ease, background .18s ease;
+    }
+    .icon-button:hover { background: var(--umber-soft); transform: translateY(-1px); }
+    .icon-button svg { width: 1.05cqw; height: 1.05cqw; min-width: .8rem; min-height: .8rem; fill: none; stroke: currentColor; stroke-width: 1.7; }
+
+    .progress-rail {
+      position: absolute;
+      top: 8.5cqh;
+      left: 0;
+      right: 0;
+      z-index: 42;
+      height: .3cqh;
+      background: var(--rule-soft);
+    }
+    .progress-fill { width: 16.666%; height: 100%; background: var(--umber); transition: width .35s ease; }
+
+    .slides { position: absolute; inset: 0; }
+    .slide {
+      position: absolute;
+      inset: 8.8cqh 0 8.6cqh;
+      display: grid;
+      align-content: center;
+      padding: 4.4cqh 5.25cqw 4.2cqh;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(2.4cqw);
+      pointer-events: none;
+      transition: opacity .34s ease, transform .45s cubic-bezier(.2,.7,.2,1), visibility .34s;
+    }
+    .slide.is-active { opacity: 1; visibility: visible; transform: translateX(0); pointer-events: auto; }
+    .slide.was-active { transform: translateX(-2.4cqw); }
+    .slide-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 5cqw; align-items: center; width: 100%; }
+    .slide-grid.wide-left { grid-template-columns: 1.13fr .87fr; }
+    .slide-grid.wide-right { grid-template-columns: .86fr 1.14fr; }
+
+    .slide-kicker { margin: 0 0 2cqh; color: var(--umber); font-size: .76cqw; font-weight: 700; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, .display { font-family: var(--serif); font-weight: 500; letter-spacing: -.045em; text-wrap: balance; }
+    h1 { max-width: 11ch; margin-bottom: 2.3cqh; font-size: 5.35cqw; line-height: .93; }
+    h1 span, h2 em { color: var(--umber); font-style: italic; }
+    h2 { max-width: 14ch; margin-bottom: 2.2cqh; font-size: 3.75cqw; line-height: .98; }
+    h3 { margin-bottom: 1cqh; font-size: 1.24cqw; line-height: 1.15; }
+    .lead { max-width: 48ch; margin-bottom: 0; color: var(--ink-soft); font-size: 1.18cqw; line-height: 1.55; text-wrap: pretty; }
+    .micro { color: var(--muted); font-size: .62cqw; }
+    .source-line { margin: 1.7cqh 0 0; color: var(--faint); font-size: .58cqw; line-height: 1.4; }
+
+    .problem-frame {
+      position: relative;
+      display: grid;
+      gap: 1.6cqh;
+      padding: 3.4cqh 2.2cqw 3cqh;
+      border: 1px solid var(--rule);
+      border-radius: 3.2cqw .35cqw .35cqw .35cqw;
+      background: var(--sheet);
+    }
+    .problem-frame::after { position: absolute; right: 1.2cqw; top: 1.2cqh; width: .7cqw; height: .7cqw; border-radius: 50%; background: var(--umber); content: ""; }
+    .evidence-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: .65cqw; }
+    .evidence-chip { padding: 1.4cqh .55cqw; border: 1px solid var(--rule-soft); background: var(--paper-deep); text-align: center; }
+    .evidence-chip strong { display: block; margin-bottom: .5cqh; font: 700 1.3cqw var(--mono); }
+    .evidence-chip span { color: var(--muted); font-size: .68cqw; }
+    .translation-line { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1cqw; align-items: center; margin: .5cqh 0; }
+    .translation-line i { height: 1px; background: var(--rule); }
+    .translation-line span { color: var(--umber); font-family: var(--serif); font-size: 1.1cqw; font-style: italic; }
+    .actual-question { padding: 2.2cqh 1.5cqw; background: var(--ink); color: var(--sheet); }
+    .actual-question span { display: block; margin-bottom: .8cqh; color: color-mix(in srgb, var(--sheet), transparent 34%); font: 600 .66cqw var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .actual-question strong { display: block; max-width: 20ch; font: 500 1.7cqw/1.14 var(--serif); }
+
+    .solution-map { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: .75cqw; }
+    .solution-step { position: relative; min-height: 25cqh; padding: 2.4cqh 1.25cqw; border: 1px solid var(--rule); background: var(--sheet); }
+    .solution-step:nth-child(1) { border-radius: 2.4cqw .25cqw .25cqw .25cqw; }
+    .solution-step:nth-child(3) { border-radius: .25cqw .25cqw 2.4cqw .25cqw; }
+    .step-number { color: var(--umber); font-size: .67cqw; }
+    .solution-step h3 { margin-top: 5.5cqh; font-family: var(--serif); font-size: 1.45cqw; font-weight: 500; }
+    .solution-step p { margin-bottom: 0; color: var(--muted); font-size: .78cqw; line-height: 1.45; }
+    .stats-line { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4cqw; margin-top: 3.1cqh; padding-top: 2.2cqh; border-top: 1px solid var(--rule); }
+    .stat strong { display: block; font: 500 2.25cqw var(--serif); }
+    .stat span { color: var(--muted); font-size: .67cqw; line-height: 1.3; }
+
+    .decision-mock { display: grid; grid-template-columns: .9fr 1.1fr; min-height: 48cqh; border: 1px solid var(--rule); background: var(--sheet); box-shadow: 0 1.2cqw 3.3cqw color-mix(in srgb, var(--ink), transparent 90%); }
+    .mock-controls { padding: 2.3cqh 1.4cqw; border-right: 1px solid var(--rule); background: var(--paper-deep); }
+    .mock-title { margin-bottom: 1.1cqh; color: var(--muted); font: 700 .62cqw var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    .task-pill { margin-bottom: 1.8cqh; padding: 1.15cqh .85cqw; border: 1px solid var(--umber); background: var(--umber-soft); font-size: .76cqw; font-weight: 700; }
+    .segment { display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 2cqh; }
+    .segment span { padding: .85cqh .25cqw; border: 1px solid var(--rule); color: var(--muted); font-size: .56cqw; text-align: center; }
+    .segment span + span { border-left: 0; }
+    .segment .active { background: var(--ink); color: var(--sheet); border-color: var(--ink); }
+    .range-line { position: relative; height: 2px; margin: 2.1cqh .25cqw 1.15cqh; background: linear-gradient(90deg, var(--umber) 0 62%, var(--rule) 62%); }
+    .range-line::after { position: absolute; top: 50%; left: 62%; width: .8cqw; height: .8cqw; border: .16cqw solid var(--sheet); border-radius: 50%; background: var(--umber); box-shadow: 0 0 0 1px var(--umber); content: ""; transform: translate(-50%, -50%); }
+    .range-labels { display: flex; justify-content: space-between; color: var(--faint); font: .55cqw var(--mono); }
+    .metric-list { display: flex; flex-wrap: wrap; gap: .35cqw; margin-top: 2cqh; }
+    .metric { padding: .58cqh .5cqw; border: 1px solid var(--rule); font-size: .5cqw; }
+    .metric.active { border-color: var(--umber); color: var(--umber); }
+    .mock-result { position: relative; display: flex; flex-direction: column; justify-content: space-between; padding: 3.2cqh 2cqw 2.5cqh; }
+    .interpretation { display: inline-flex; width: fit-content; padding: .55cqh .6cqw; border: 1px solid var(--umber); color: var(--umber); font: 700 .55cqw var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+    .model-result { margin: 2.8cqh 0; }
+    .model-result strong { display: block; font: 500 3.4cqw/.9 var(--serif); }
+    .model-result span { display: block; margin-top: 1.2cqh; color: var(--muted); font-size: .85cqw; }
+    .why-line { max-width: 35ch; color: var(--ink-soft); font-size: .78cqw; line-height: 1.48; }
+    .alternatives { display: grid; grid-template-columns: 1fr 1fr; gap: .65cqw; }
+    .alternative { padding: 1.2cqh .75cqw; border-top: 1px solid var(--rule); }
+    .alternative span { display: block; margin-bottom: .55cqh; color: var(--muted); font: .55cqw var(--mono); text-transform: uppercase; }
+    .alternative strong { font-size: .78cqw; }
+
+    .atlas-map { display: grid; grid-template-columns: .72fr 1.28fr; min-height: 47cqh; border: 1px solid var(--rule); background: var(--sheet); }
+    .capability-copy { padding: 2.5cqh 1.5cqw; border-right: 1px solid var(--rule); background: var(--paper-deep); }
+    .capability-copy h3 { margin: 1.1cqh 0 2.2cqh; font: 500 1.7cqw/1.05 var(--serif); }
+    .meaning-list { display: grid; gap: 1.4cqh; }
+    .meaning-item strong { display: block; margin-bottom: .35cqh; color: var(--umber); font: 700 .54cqw var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+    .meaning-item span { display: block; color: var(--ink-soft); font-size: .68cqw; line-height: 1.38; }
+    .benchmark-label { margin-top: 2.2cqh; padding-top: 1.4cqh; border-top: 1px solid var(--rule); }
+    .benchmark-label span { display: block; color: var(--muted); font: .52cqw var(--mono); text-transform: uppercase; }
+    .benchmark-label strong { display: block; margin-top: .5cqh; font-size: .72cqw; }
+    .chart-preview { position: relative; padding: 2.6cqh 1.5cqw 2cqh; overflow: hidden; }
+    .chart-preview h3 { font-family: var(--serif); font-size: 1.3cqw; font-weight: 500; }
+    .chart-legend { display: flex; gap: .9cqw; color: var(--muted); font-size: .52cqw; }
+    .chart-legend span { display: flex; align-items: center; gap: .28cqw; }
+    .chart-legend i { width: .4cqw; height: .4cqw; border-radius: 50%; background: var(--dot); }
+    .chart-svg { width: 100%; height: 28cqh; margin-top: 1.5cqh; overflow: visible; }
+    .chart-svg .grid { stroke: var(--rule-soft); stroke-width: 1; }
+    .chart-svg .axis { stroke: var(--rule); stroke-width: 1.4; }
+    .chart-svg text { fill: var(--muted); font: 12px var(--mono); }
+    .curve { fill: none; stroke: var(--sol); stroke-width: 2.2; }
+    .dot { stroke: var(--sheet); stroke-width: 2; }
+    .dot.dominated { opacity: .28; }
+    .star { fill: var(--umber); stroke: var(--sheet); stroke-width: 1.5; }
+    .chart-note { display: flex; justify-content: space-between; gap: 1cqw; margin-top: .5cqh; padding-top: 1.2cqh; border-top: 1px solid var(--rule-soft); color: var(--muted); font-size: .58cqw; }
+    .chart-note strong { color: var(--ink); }
+
+    .build-flow { position: relative; display: grid; grid-template-columns: 1fr .2fr 1fr; align-items: stretch; min-height: 44cqh; }
+    .build-column { padding: 2.8cqh 1.7cqw; border: 1px solid var(--rule); background: var(--sheet); }
+    .build-column.human { border-radius: 2.6cqw .25cqw .25cqw .25cqw; }
+    .build-column.codex { border-radius: .25cqw .25cqw 2.6cqw .25cqw; }
+    .build-column h3 { margin: 1.1cqh 0 2.3cqh; font: 500 1.8cqw var(--serif); }
+    .build-list { display: grid; gap: 1.35cqh; }
+    .build-list div { display: grid; grid-template-columns: auto 1fr; gap: .65cqw; align-items: start; color: var(--ink-soft); font-size: .72cqw; line-height: 1.35; }
+    .build-list i { width: .43cqw; height: .43cqw; margin-top: .33cqh; border-radius: 50%; background: var(--umber); }
+    .thread-spine { display: grid; place-items: center; }
+    .thread-spine::before { width: 1px; height: 78%; background: var(--rule); content: ""; }
+    .thread-spine span { position: absolute; padding: 1cqh .35cqw; background: var(--paper); color: var(--umber); font: 700 .54cqw var(--mono); letter-spacing: .08em; text-transform: uppercase; writing-mode: vertical-rl; }
+    .boundary-strip { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; margin-top: 2cqh; padding: 1.2cqh 1cqw; border: 1px solid var(--rule); color: var(--muted); font-size: .66cqw; }
+    .boundary-strip strong { color: var(--ink); }
+
+    .closing-panel { position: relative; padding: 4cqh 3cqw; border: 1px solid var(--rule); border-radius: 4cqw .35cqw 4cqw .35cqw; background: var(--sheet); overflow: hidden; }
+    .closing-panel::before { position: absolute; width: 20cqw; height: 20cqw; right: -6cqw; top: -12cqw; border: 1px solid var(--rule); border-radius: 50%; content: ""; }
+    .closing-panel h2 { max-width: 12ch; margin-bottom: 2.8cqh; font-size: 4.5cqw; }
+    .demo-path { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1cqw; margin: 2.8cqh 0; }
+    .demo-step { padding: 1.5cqh .9cqw; border-top: 1px solid var(--rule); }
+    .demo-step span { display: block; margin-bottom: .6cqh; color: var(--umber); font: 700 .6cqw var(--mono); }
+    .demo-step strong { font-size: .78cqw; }
+    .cta-row { display: flex; align-items: center; gap: .8cqw; }
+    .cta { display: inline-flex; align-items: center; justify-content: center; min-height: 4.2cqh; padding: 0 1.15cqw; border: 1px solid var(--ink); background: var(--ink); color: var(--sheet); font-size: .68cqw; font-weight: 700; text-decoration: none; }
+    .cta.secondary { background: transparent; color: var(--ink); border-color: var(--rule); }
+
+    .deck-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 40;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      height: 8.6cqh;
+      padding: 0 4.6cqw;
+      border-top: 1px solid var(--rule-soft);
+      background: color-mix(in srgb, var(--paper), transparent 5%);
+    }
+    .nav-hint { color: var(--muted); font-size: .58cqw; }
+    .nav-hint:last-child { padding-right: 5.8cqw; text-align: right; }
+    .slide-dots { display: flex; align-items: center; gap: .6cqw; }
+    .slide-dot { width: .58cqw; height: .58cqw; min-width: .45rem; min-height: .45rem; padding: 0; border: 1px solid var(--faint); border-radius: 50%; background: transparent; cursor: pointer; }
+    .slide-dot[aria-current="true"] { border-color: var(--umber); background: var(--umber); transform: scale(1.25); }
+    .nav-buttons { position: absolute; right: 4.6cqw; bottom: 2.2cqh; z-index: 45; display: flex; gap: .5cqw; }
+
+    @media (max-aspect-ratio: 4/5) {
+      body { align-items: start; padding-top: max(1rem, env(safe-area-inset-top)); }
+      .deck { margin-top: 0; }
+      .chrome-meta, .nav-hint { display: none; }
+      .deck-footer { grid-template-columns: 1fr; justify-items: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .001ms !important; animation-duration: .001ms !important; }
+    }
+
+    @media print {
+      @page { size: 13.333in 7.5in; margin: 0; }
+      html, body { display: block; width: auto; height: auto; min-height: 0; overflow: visible; background: #fff; }
+      .deck { width: 13.333in; height: 7.5in; overflow: visible; box-shadow: none; }
+      .deck::before, .deck-chrome, .deck-footer, .nav-buttons, .progress-rail { display: none !important; }
+      .slides { position: static; }
+      .slide, .slide.is-active, .slide.was-active {
+        position: relative;
+        inset: auto;
+        display: grid;
+        width: 13.333in;
+        height: 7.5in;
+        padding: .65in .7in;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        pointer-events: auto;
+        break-after: page;
+        page-break-after: always;
+        background: var(--paper);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" id="deck" aria-label="GPT-5.6 Field Guide Build Week presentation">
+    <header class="deck-chrome">
+      <div class="brand"><i class="brand-mark" aria-hidden="true"></i>GPT-5.6 Field Guide</div>
+      <div class="chrome-actions">
+        <span class="chrome-meta">Build Week · 2026</span>
+        <button class="icon-button" id="theme-button" type="button" aria-label="Switch to study theme" title="Switch theme (T)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.6 5.6 7 7m10 10 1.4 1.4m0-12.8L17 7M7 17l-1.4 1.4"/><circle cx="12" cy="12" r="4"/></svg>
+        </button>
+        <button class="icon-button" id="fullscreen-button" type="button" aria-label="Enter fullscreen" title="Fullscreen (F)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M8 21H3v-5m13 5h5v-5"/></svg>
+        </button>
+      </div>
+    </header>
+    <div class="progress-rail" aria-hidden="true"><div class="progress-fill" id="progress-fill"></div></div>
+
+    <div class="slides">
+      <section class="slide is-active" data-slide="0" aria-labelledby="slide-1-title" aria-hidden="false" tabindex="-1">
+        <div class="slide-grid wide-left">
+          <div>
+            <p class="slide-kicker">01 · The problem</p>
+            <h1 id="slide-1-title">Benchmarks speak in <span>numbers.</span> Work speaks in needs.</h1>
+            <p class="lead">A score can be precise and still leave the most important question unanswered: which model and reasoning level fit the task, budget, and waiting tolerance in front of me?</p>
+          </div>
+          <div class="problem-frame" aria-label="The translation gap between published evidence and a real decision">
+            <span class="micro">Published evidence</span>
+            <div class="evidence-row">
+              <div class="evidence-chip"><strong>↗</strong><span>Score</span></div>
+              <div class="evidence-chip"><strong>$</strong><span>Cost</span></div>
+              <div class="evidence-chip"><strong>s</strong><span>Latency</span></div>
+              <div class="evidence-chip"><strong>tok</strong><span>Output</span></div>
+            </div>
+            <div class="translation-line"><i></i><span>The decision gap</span><i></i></div>
+            <div class="actual-question"><span>Actual question</span><strong>What should I use for this work?</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="1" aria-labelledby="slide-2-title" aria-hidden="true" tabindex="-1">
+        <div class="slide-grid wide-left">
+          <div>
+            <p class="slide-kicker">02 · The solution</p>
+            <h2 id="slide-2-title">A capability-first <em>field guide.</em></h2>
+            <p class="lead">One fast decision path above a deep, inspectable evidence atlas. No universal winner. No guessed data. No framework or external runtime.</p>
+            <div class="stats-line" aria-label="Project evidence coverage">
+              <div class="stat"><strong>278</strong><span>preserved evidence points</span></div>
+              <div class="stat"><strong>39</strong><span>definitions across source files</span></div>
+              <div class="stat"><strong>196</strong><span>resource-complete points</span></div>
+            </div>
+          </div>
+          <div class="solution-map">
+            <article class="solution-step"><span class="step-number">01</span><h3>Choose the work</h3><p>Start from an everyday task or agent workflow—not a benchmark name.</p></article>
+            <article class="solution-step"><span class="step-number">02</span><h3>Tune the compromise</h3><p>Express resource tendency, money versus waiting, and active metric.</p></article>
+            <article class="solution-step"><span class="step-number">03</span><h3>Inspect the evidence</h3><p>Read capability meaning, alternatives, provenance, formulas, and limits.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="2" aria-labelledby="slide-3-title" aria-hidden="true" tabindex="-1">
+        <div class="slide-grid wide-right">
+          <div>
+            <p class="slide-kicker">03 · Quick Decision</p>
+            <h2 id="slide-3-title">A recommendation that shows its <em>trade-off.</em></h2>
+            <p class="lead">Task choice establishes relevant evidence. Shared settings update the recommendation, alternatives, chart star, and explanation together.</p>
+            <p class="source-line">Every recommendation is labeled project interpretation—not official OpenAI advice.</p>
+          </div>
+          <div class="decision-mock" aria-label="Illustrative preview of the Quick Decision interface">
+            <div class="mock-controls">
+              <div class="mock-title">Selected task</div>
+              <div class="task-pill">Build and operate software</div>
+              <div class="mock-title">Recommendation tendency</div>
+              <div class="segment"><span>Conserve</span><span class="active">Balanced</span><span>Quality</span></div>
+              <div class="mock-title">Money versus waiting</div>
+              <div class="range-line"></div>
+              <div class="range-labels"><span>Save money</span><span>Wait less</span></div>
+              <div class="metric-list"><span class="metric active">Cost</span><span class="metric">Latency</span><span class="metric">Tokens</span><span class="metric">Composite</span></div>
+            </div>
+            <div class="mock-result">
+              <span class="interpretation">Project interpretation</span>
+              <div class="model-result"><strong>Sol</strong><span>high reasoning · single agent</span></div>
+              <p class="why-line">A measured balance point for this capability under the current resource preference.</p>
+              <div class="alternatives"><div class="alternative"><span>Cheaper</span><strong>Quantified resource difference</strong></div><div class="alternative"><span>Stronger</span><strong>Quantified score difference</strong></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="3" aria-labelledby="slide-4-title" aria-hidden="true" tabindex="-1">
+        <div class="slide-grid wide-left">
+          <div>
+            <p class="slide-kicker">04 · Capability Atlas</p>
+            <h2 id="slide-4-title">Meaning first. Evidence <em>second.</em></h2>
+            <p class="lead">Each benchmark begins with the capability it represents, real-task resemblance, measurement boundary, score interpretation, and named evidence source.</p>
+            <p class="source-line">Missing stays missing · source conflicts stay visible · raw unlike scores are never averaged</p>
+          </div>
+          <div class="atlas-map">
+            <div class="capability-copy">
+              <span class="micro">Capability represented</span>
+              <h3>Build and operate software</h3>
+              <div class="meaning-list">
+                <div class="meaning-item"><strong>Resembles</strong><span>Environment setup, terminal debugging, implementation, and verification.</span></div>
+                <div class="meaning-item"><strong>Does not measure</strong><span>Product judgment, long-term maintainability, or production safety.</span></div>
+                <div class="meaning-item"><strong>Score reading</strong><span>A controlled capability signal—not a guarantee for your repository.</span></div>
+              </div>
+              <div class="benchmark-label"><span>Evidence supplied by</span><strong>Terminal-Bench 2.1</strong></div>
+            </div>
+            <div class="chart-preview">
+              <h3>Score versus active resource metric</h3>
+              <div class="chart-legend"><span><i style="--dot:var(--sol)"></i>Pareto-efficient</span><span><i style="--dot:var(--faint)"></i>Dominated</span><span><i style="--dot:var(--umber)"></i>Recommended</span></div>
+              <svg class="chart-svg" viewBox="0 0 520 260" role="img" aria-label="Illustrative interactive atlas chart with efficient, dominated, and recommended points">
+                <g><line class="grid" x1="48" y1="40" x2="490" y2="40"/><line class="grid" x1="48" y1="100" x2="490" y2="100"/><line class="grid" x1="48" y1="160" x2="490" y2="160"/><line class="grid" x1="48" y1="220" x2="490" y2="220"/><line class="axis" x1="48" y1="220" x2="490" y2="220"/><line class="axis" x1="48" y1="40" x2="48" y2="220"/><text x="48" y="246">Lower resource</text><text x="397" y="246">Higher resource</text></g>
+                <path class="curve" d="M82 194 C142 168 175 142 220 126 S320 82 450 52"/>
+                <circle class="dot" cx="82" cy="194" r="7" fill="var(--luna)"/><circle class="dot dominated" cx="165" cy="181" r="7" fill="var(--terra)"/><circle class="dot" cx="220" cy="126" r="7" fill="var(--terra)"/><circle class="dot dominated" cx="310" cy="138" r="7" fill="var(--sol)"/><circle class="dot" cx="365" cy="76" r="7" fill="var(--sol)"/><circle class="dot" cx="450" cy="52" r="7" fill="var(--ultra)"/>
+                <path class="star" d="m365 57 5.4 11 12.1 1.8-8.8 8.5 2.1 12-10.8-5.7-10.8 5.7 2.1-12-8.8-8.5 12.1-1.8z"/>
+              </svg>
+              <div class="chart-note"><span><strong>Selectable</strong> by pointer or keyboard</span><span><strong>One</strong> detailed benchmark at a time</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="4" aria-labelledby="slide-5-title" aria-hidden="true" tabindex="-1">
+        <div>
+          <p class="slide-kicker">05 · Built with Codex and GPT-5.6</p>
+          <h2 id="slide-5-title">Human judgment set the rules. Codex accelerated the <em>craft.</em></h2>
+          <div class="build-flow">
+            <article class="build-column human">
+              <span class="micro">Human creator</span>
+              <h3>Product direction</h3>
+              <div class="build-list"><div><i></i><span>Capabilities before benchmark brands</span></div><div><i></i><span>Strict evidence and missing-data boundaries</span></div><div><i></i><span>Task meaning only where it is honest</span></div><div><i></i><span>Editorial paper-and-ink visual identity</span></div></div>
+            </article>
+            <div class="thread-spine" aria-hidden="true"><span>Primary build thread</span></div>
+            <article class="build-column codex">
+              <span class="micro">Codex · GPT-5.6</span>
+              <h3>Implementation acceleration</h3>
+              <div class="build-list"><div><i></i><span>Schema, provenance, and conflict audits</span></div><div><i></i><span>Original HTML, CSS, JavaScript, and SVG</span></div><div><i></i><span>Linked state, synthesis, Pareto, and utility logic</span></div><div><i></i><span>Accessibility, browser, offline, and privacy QA</span></div></div>
+            </article>
+            <div class="boundary-strip"><span><strong>Pre-existing:</strong> three preserved dataset snapshots and private read-only references</span><span><strong>Build Week:</strong> product decisions, architecture, implementation, testing, and presentation</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide" data-slide="5" aria-labelledby="slide-6-title" aria-hidden="true" tabindex="-1">
+        <div class="closing-panel">
+          <p class="slide-kicker">06 · Live demo</p>
+          <h2 id="slide-6-title">Choose the work. Tune the compromise. <em>Inspect the evidence.</em></h2>
+          <p class="lead">A fast decision path with a deep audit trail underneath—and a clearer answer to what you should test next.</p>
+          <div class="demo-path" aria-label="Three-part live demo path">
+            <div class="demo-step"><span>01</span><strong>Make one task-first recommendation</strong></div>
+            <div class="demo-step"><span>02</span><strong>Change the resource preference</strong></div>
+            <div class="demo-step"><span>03</span><strong>Trace it into the Capability Atlas</strong></div>
+          </div>
+          <div class="cta-row"><a class="cta" href="./index.html">Open the live field guide</a><a class="cta secondary" href="https://github.com/Volleyball01/gpt-5-6-field-guide-build-week">View source</a></div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="deck-footer">
+      <span class="nav-hint">Arrow keys · Space · Swipe</span>
+      <div class="slide-dots" id="slide-dots" aria-label="Choose slide"></div>
+      <span class="nav-hint" id="slide-counter" aria-live="polite">01 / 06</span>
+    </footer>
+    <div class="nav-buttons">
+      <button class="icon-button" id="previous-button" type="button" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button class="icon-button" id="next-button" type="button" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+    <p class="sr-only" id="keyboard-help">Use left and right arrow keys, page up and page down, home and end, or space to navigate. Press T to switch theme and F for fullscreen.</p>
+  </main>
+
+  <script>
+    (() => {
+      "use strict";
+      const slides = [...document.querySelectorAll(".slide")];
+      const dotsHost = document.getElementById("slide-dots");
+      const counter = document.getElementById("slide-counter");
+      const progress = document.getElementById("progress-fill");
+      const previousButton = document.getElementById("previous-button");
+      const nextButton = document.getElementById("next-button");
+      const themeButton = document.getElementById("theme-button");
+      const fullscreenButton = document.getElementById("fullscreen-button");
+      const deck = document.getElementById("deck");
+      let active = Math.min(Math.max((Number(location.hash.slice(1)) || 1) - 1, 0), slides.length - 1);
+      let touchStartX = null;
+
+      dotsHost.innerHTML = slides.map((_, index) => `<button class="slide-dot" type="button" data-go="${index}" aria-label="Go to slide ${index + 1}" aria-current="${index === active}"></button>`).join("");
+      const dots = [...dotsHost.querySelectorAll(".slide-dot")];
+
+      function render(next, options = {}) {
+        const bounded = Math.min(Math.max(next, 0), slides.length - 1);
+        slides.forEach((slide, index) => {
+          slide.classList.toggle("was-active", index < bounded);
+          slide.classList.toggle("is-active", index === bounded);
+          slide.setAttribute("aria-hidden", String(index !== bounded));
+          if (index === bounded) slide.removeAttribute("inert"); else slide.setAttribute("inert", "");
+        });
+        dots.forEach((dot, index) => dot.setAttribute("aria-current", String(index === bounded)));
+        active = bounded;
+        counter.textContent = `${String(active + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+        progress.style.width = `${((active + 1) / slides.length) * 100}%`;
+        previousButton.disabled = active === 0;
+        nextButton.disabled = active === slides.length - 1;
+        if (location.hash !== `#${active + 1}`) history.replaceState(null, "", `#${active + 1}`);
+        if (options.focus) slides[active].focus({ preventScroll: true });
+      }
+
+      function changeTheme() {
+        const next = document.documentElement.dataset.theme === "paper" ? "study" : "paper";
+        document.documentElement.dataset.theme = next;
+        document.querySelector('meta[name="theme-color"]').content = next === "paper" ? "#f8f6f0" : "#0d2230";
+        themeButton.setAttribute("aria-label", `Switch to ${next === "paper" ? "study" : "paper"} theme`);
+        try { localStorage.setItem("field-guide-slide-theme", next); } catch (_) { /* Local storage is optional. */ }
+      }
+
+      async function toggleFullscreen() {
+        try {
+          if (!document.fullscreenElement) await deck.requestFullscreen(); else await document.exitFullscreen();
+        } catch (_) { /* Fullscreen may be unavailable in an embedded browser. */ }
+      }
+
+      previousButton.addEventListener("click", () => render(active - 1, { focus: true }));
+      nextButton.addEventListener("click", () => render(active + 1, { focus: true }));
+      dotsHost.addEventListener("click", (event) => { const dot = event.target.closest("[data-go]"); if (dot) render(Number(dot.dataset.go), { focus: true }); });
+      themeButton.addEventListener("click", changeTheme);
+      fullscreenButton.addEventListener("click", toggleFullscreen);
+      document.addEventListener("fullscreenchange", () => fullscreenButton.setAttribute("aria-label", document.fullscreenElement ? "Exit fullscreen" : "Enter fullscreen"));
+
+      document.addEventListener("keydown", (event) => {
+        const interactive = event.target.closest("a, button, input, select, textarea");
+        if (["ArrowRight", "PageDown"].includes(event.key) || (event.key === " " && !interactive)) { event.preventDefault(); render(active + 1, { focus: true }); }
+        if (["ArrowLeft", "PageUp"].includes(event.key)) { event.preventDefault(); render(active - 1, { focus: true }); }
+        if (event.key === "Home") { event.preventDefault(); render(0, { focus: true }); }
+        if (event.key === "End") { event.preventDefault(); render(slides.length - 1, { focus: true }); }
+        if (event.key.toLowerCase() === "t" && !interactive) changeTheme();
+        if (event.key.toLowerCase() === "f" && !interactive) toggleFullscreen();
+      });
+
+      deck.addEventListener("touchstart", (event) => { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
+      deck.addEventListener("touchend", (event) => {
+        if (touchStartX === null) return;
+        const delta = event.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(delta) > 42) render(active + (delta < 0 ? 1 : -1));
+        touchStartX = null;
+      }, { passive: true });
+      window.addEventListener("hashchange", () => render((Number(location.hash.slice(1)) || 1) - 1));
+
+      try {
+        const savedTheme = localStorage.getItem("field-guide-slide-theme");
+        if (savedTheme === "study") document.documentElement.dataset.theme = "study";
+      } catch (_) { /* The deck still works when storage is blocked. */ }
+      render(active);
+    })();
+  </script>
+</body>
+</html>
