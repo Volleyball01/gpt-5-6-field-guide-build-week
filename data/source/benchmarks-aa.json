@@ -1,0 +1,717 @@
+{
+  "schemaVersion": "0.2.0",
+  "generatedAt": null,
+  "benchmarks": [
+    {
+      "id": "aa-intelligence-index-v4-1",
+      "name": "Artificial Analysis Intelligence Index v4.1",
+      "category": "general-intelligence",
+      "scoreMetric": "index",
+      "higherIsBetter": true
+    }
+  ],
+  "points": [
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "luna",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 26.56,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 54.37,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 0.16,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 2357378,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "luna",
+      "reasoningEffort": "low",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 33.26,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 71.76,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 0.18,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 6971397,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "luna",
+      "reasoningEffort": "medium",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 38.05,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 108.83,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 0.29,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 12479860,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "luna",
+      "reasoningEffort": "high",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 46.06,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 277.99,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 0.65,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 37034644,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "luna",
+      "reasoningEffort": "xhigh",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 49.07,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 483.34,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 1.03,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 66735431,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "luna",
+      "reasoningEffort": "max",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 51.24,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 875.94,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 1.22,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 125011185,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "terra",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 33.97,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 131.04,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 0.25,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 2575228,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "terra",
+      "reasoningEffort": "low",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 40.47,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 168.05,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 0.26,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 5938387,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "terra",
+      "reasoningEffort": "medium",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 45.57,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 247.63,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 0.5,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 10422690,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "terra",
+      "reasoningEffort": "high",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 48.95,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 503.21,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 0.83,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 23635170,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "terra",
+      "reasoningEffort": "xhigh",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 51.6,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 748.37,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 1.24,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 36365888,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "terra",
+      "reasoningEffort": "max",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 54.95,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 1766.14,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 2.03,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 95509319,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "sol",
+      "reasoningEffort": "none",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 41.2,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 256.33,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 0.34,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 2648394,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "sol",
+      "reasoningEffort": "low",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 49.44,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 368.28,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 0.4,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 6584353,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "sol",
+      "reasoningEffort": "medium",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 53.59,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 607.85,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 0.6,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 11976871,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "sol",
+      "reasoningEffort": "high",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 55.87,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 970.48,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 1.0,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 21248736,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "sol",
+      "reasoningEffort": "xhigh",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 57.65,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 1557.81,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 1.47,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 35398293,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    },
+    {
+      "benchmarkId": "aa-intelligence-index-v4-1",
+      "modelId": "sol",
+      "reasoningEffort": "max",
+      "execution": {
+        "mode": "single-agent",
+        "agentCount": 1
+      },
+      "score": {
+        "value": 58.89,
+        "unit": "index",
+        "metric": "aa-intelligence-index-v4-1"
+      },
+      "estimatedApiCost": {
+        "value": 2839.42,
+        "unit": "usd",
+        "metric": "estimated-api-cost",
+        "scope": "full-benchmark-run"
+      },
+      "latency": {
+        "value": 2.22,
+        "unit": "min",
+        "metric": "official-benchmark-latency",
+        "scope": "benchmark-defined"
+      },
+      "outputTokens": {
+        "value": 70085722,
+        "unit": "tokens",
+        "metric": "output-tokens",
+        "scope": "full-benchmark-run"
+      },
+      "provenance": "openai-official",
+      "sourceFiles": {
+        "cost": "sources/openai/raw/cost/Artificial Analysis Intelligence Index v4.1.svg",
+        "latency": "sources/openai/raw/latency/Artificial Analysis Intelligence Index v4.1.svg",
+        "outputTokens": "sources/openai/raw/output-tokens/Artificial Analysis Intelligence Index v4.1.svg"
+      },
+      "notes": []
+    }
+  ]
+}

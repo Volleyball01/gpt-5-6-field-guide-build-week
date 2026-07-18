@@ -10,16 +10,17 @@ The following datasets were created before Build Week and are included without m
 
 - `benchmarks-v3.json`
 - `benchmarks-v3-score-only.json`
+- `benchmarks-aa.json`
 
-Their values, units, missing fields, provenance labels, and schema metadata are preserved as received. Moving the files into this repository does not make their underlying benchmark results or third-party names original Build Week work.
+The two `benchmarks-v3` datasets use schema `0.3.0`. The Artificial Analysis dataset uses schema `0.2.0` and contains the Artificial Analysis Intelligence Index v4.1 records. Their values, units, missing fields, provenance labels, source-asset labels, and schema metadata are preserved as received. Moving the files into this repository does not make their underlying benchmark results, methodologies, or third-party names original Build Week work.
 
 ### Private reference materials
 
 Pre-existing private HTML and design-intent materials were inspected read-only for general visual, information-architecture, interaction, and accessibility patterns. They are not included in this repository. Their code and content will not be copied wholesale, and future implementation will be original to this project.
 
-## Work planned for Build Week
+## Build Week work boundary
 
-The intended Build Week scope is narrow and has not yet been implemented:
+The original, Build Week-created layer may include:
 
 - define a task-first information architecture for quick decisions and deeper evidence review;
 - map common user tasks to relevant benchmark evidence without claiming a universal best model;
@@ -27,9 +28,9 @@ The intended Build Week scope is narrow and has not yet been implemented:
 - present complete benchmark curves separately from score-only evidence;
 - add inspectable configuration comparisons, provenance, and missing-data explanations;
 - support responsive layouts, keyboard access, reduced motion, and offline use;
-- prepare a self-contained guide, a concise companion presentation, and submission documentation;
+- prepare a self-contained guide and submission documentation;
 - validate data loading, navigation, accessibility, and privacy before release.
 
-## Current boundary
+The interactive field guide is original Build Week work. The source datasets, private references, benchmark methodologies, benchmark results, model names, and third-party marks are not claimed as Build Week-created material.
 
-At this baseline, no product interface, recommendation system, demo, presentation, or Build Week feature is claimed as complete.
+No companion presentation is included at this stage.
