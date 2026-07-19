@@ -36,6 +36,6 @@ The interactive field guide, capability-first information architecture, task map
 
 ## Current submission stage
 
-The working product is deployed, the public repository contains run and test instructions, and the submission story, gallery plan, narration script, recording plan, and presentation deck are prepared.
+The working product is deployed, the public repository contains run and test instructions, and the submission story, gallery plan, narration script, recording plan, and presentation deck are complete. The public narrated demo is complete and published, and the primary Codex `/feedback` Session ID has been recorded.
 
-The final public YouTube video has not yet been recorded or published. The primary-thread Codex `/feedback` Session ID has not yet been generated, and the final Devpost submission has not been claimed as complete. Those two values remain explicit placeholders until the creator performs the final recording and submission steps.
+All repository submission materials are complete. The Devpost submission itself has not yet been claimed as submitted.

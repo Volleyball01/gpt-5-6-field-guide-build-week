@@ -2,7 +2,7 @@
 
 An independent, capability-first field guide for choosing GPT-5.6 models and reasoning levels from task needs, resource preferences, and transparent benchmark evidence.
 
-> **Status: Build Week submission candidate.** The product is complete and deployed. The final YouTube video and Codex `/feedback` Session ID are still pending. Every recommendation and capability synthesis is project interpretation, not official OpenAI advice.
+> **Status: Build Week submission package complete.** The product is deployed, the public narrated demo is published, and the primary Codex `/feedback` Session ID is recorded. The Devpost submission itself has not yet been claimed as submitted. Every recommendation and capability synthesis is project interpretation, not official OpenAI advice.
 
 ## Live demo
 
@@ -94,12 +94,12 @@ The three JSON datasets and private design references existed before Build Week.
 
 Private references were used read-only for general design and interaction direction. They are not included in the repository, and their code was not copied wholesale.
 
-## Submission placeholders
+## Submission evidence
 
-- Final public YouTube demo: `<add-public-youtube-url>`
-- Primary Codex `/feedback` Session ID: `<add-feedback-session-id>`
+- [Public narrated YouTube demo](https://www.youtube.com/watch?v=-OdQyk8LBSU)
+- Primary Codex `/feedback` Session ID: `019f740c-94a0-7f11-ae0f-f0b20c1223e9`
 
-Do not fill these placeholders until the final recording is public and `/feedback` has been run in the primary build thread.
+All repository submission materials are complete. The final Devpost submission has not yet been claimed as submitted.
 
 ## License and notices
 

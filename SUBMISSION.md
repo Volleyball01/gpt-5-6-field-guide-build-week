@@ -14,8 +14,8 @@ Choose GPT-5.6 by the work you need to finish—not by the loudest benchmark num
 
 - Live project: https://gpt-5-6-field-guide-build-week.vercel.app/
 - Source repository: https://github.com/Volleyball01/gpt-5-6-field-guide-build-week
-- Public YouTube demo: `<add-public-youtube-url>`
-- Primary Codex `/feedback` Session ID: `<add-feedback-session-id>`
+- Public YouTube demo: https://www.youtube.com/watch?v=-OdQyk8LBSU
+- Primary Codex `/feedback` Session ID: `019f740c-94a0-7f11-ae0f-f0b20c1223e9`
 
 ## Devpost Project Story
 
@@ -69,7 +69,7 @@ We also learned that a single-file constraint can improve product discipline. Wi
 
 ### What is next
 
-The immediate next step is the final narrated demo and Devpost submission. After Build Week, the project could add user-supplied evaluation results, exportable comparison notes, and versioned benchmark snapshots. Any expansion should preserve the current rules: no hidden averaging, no guessed resources, no universal winner, and a visible boundary between source evidence and project interpretation.
+The public narrated demo and primary Codex `/feedback` evidence are complete. The immediate next step is the Devpost submission, which has not yet been claimed as submitted. After Build Week, the project could add user-supplied evaluation results, exportable comparison notes, and versioned benchmark snapshots. Any expansion should preserve the current rules: no hidden averaging, no guessed resources, no universal winner, and a visible boundary between source evidence and project interpretation.
 
 ## Built with tags
 
@@ -144,5 +144,5 @@ Recording notes:
 - Record at 1920 × 1080 or 1440 × 810 with browser zoom at 100%.
 - Keep the pointer still while speaking; move only when demonstrating an interaction.
 - Use the prepared six-slide deck as chapter cards, not as a substitute for the working-product demo.
-- Keep the final export under three minutes and upload it as a public YouTube video.
-- Run Codex `/feedback` only after the final build thread is complete, then replace both placeholders.
+- The final narrated export is public and remains under the three-minute limit.
+- The primary Codex `/feedback` Session ID is recorded in the required links section above.
